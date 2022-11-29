@@ -1,23 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import Myhome from './components/Home';
-import Mybout from './components/About';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Navbar from './components/Navbar';
-
+import Home from './Home';
+import Navbar from './Navbar';
+import About from './About';
+import Error from './Error';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
     <Navbar />
-    <Routes>
-        <Route path="home" element={<Myhome />} />
-        <Route path='about' element={<Mybout/>} />
 
-    </Routes>
+        <Routes>
+          <Route path='/home' element={<Home/>} />
+          <Route path='/about' element={<About/>} />
+          <Route path='*' element={<Error/>} />
+
+        </Routes>
     </BrowserRouter>
-
   </React.StrictMode>
 );
 

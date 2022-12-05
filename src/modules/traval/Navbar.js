@@ -1,15 +1,15 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
+import '../../style.css'
 
 function Navbar() {
   return (
     <div className="container">
     <header className="d-flex justify-content-center py-3">
       <ul className="nav nav-pills">
-        <li className="nav-item"><a href="#" className="nav-link active" aria-current="page">Home</a></li>
-        <li className="nav-item"><a href="http://google.com" target="_blank" className="nav-link">google</a></li>
-        <li className="nav-item"><a href="#" className="nav-link">Pricing</a></li>
-        <li className="nav-item"><a href="#" className="nav-link">FAQs</a></li>
-        <li className="nav-item"><a href="#" className="nav-link">About</a></li>
+        <Link to="travalmap" className='mynav'> Traval map </Link>
+        <Link to="expance" className='mynav'> Expance </Link>
+        <Link to="route" className='mynav'> Route </Link>
       </ul>
     </header>
   </div>

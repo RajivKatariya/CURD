@@ -5,3 +5,13 @@
     color:white;
     text-decoration: none;
 }
+
+.mynav
+{
+    margin: 10px;
+    padding: 5px;
+    color: red;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-decoration: none;
+}

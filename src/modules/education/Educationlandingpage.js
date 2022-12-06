@@ -1,9 +1,11 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { First, Second } from './Fee';
+import Noida from './Noida';
 
 
 function Educationlandingpage() {
+    const abc = "sdkfj ksd fjshd fjkh sdjkfhsd";
     return (
         <div>
             <div className="container py-4">
@@ -15,7 +17,7 @@ function Educationlandingpage() {
 
                   <First />
                   <Second />
-
+                    <Noida location={abc}/>
                     </div>
 
 

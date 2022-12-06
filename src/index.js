@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Ducat , Route, Routes } from 'react-router-dom';
 import Travallandingpage from './modules/traval/travallandingpage';
 import Educationlandingpage from './modules/education/Educationlandingpage';
 import Welcome from './Welcome';
@@ -9,7 +9,7 @@ import Welcome from './Welcome';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <Ducat>
       <Routes>
         <Route path='' element={<Welcome/>}/>
         <Route path='traval' element={<Travallandingpage/>}/>
@@ -18,7 +18,7 @@ root.render(
       </Routes>
     
     
-    </BrowserRouter>
+    </Ducat>
 
   </React.StrictMode>
 );

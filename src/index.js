@@ -4,6 +4,7 @@ import { BrowserRouter as Ducat , Route, Routes } from 'react-router-dom';
 import Travallandingpage from './modules/traval/travallandingpage';
 import Educationlandingpage from './modules/education/Educationlandingpage';
 import Welcome from './Welcome';
+import Mylist from './modules/purchase/Mylist';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -14,6 +15,7 @@ root.render(
         <Route path='' element={<Welcome/>}/>
         <Route path='traval' element={<Travallandingpage/>}/>
         <Route path='education' element={<Educationlandingpage />}/>
+        <Route path='purchase' element={<Mylist />}/>
         
       </Routes>
     

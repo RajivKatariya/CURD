@@ -22,3 +22,24 @@
     height:100px;
     background-color:orange
 }
+
+
+.myflex
+{
+    border:1px solid gray;
+    display: flex;
+    width:100%;
+    height:auto;
+    background-color: orange;
+    flex-wrap: wrap;
+}
+.myflex section{
+    width:300px;
+    height:300px;
+    background-color:gray;
+    border:1px solid white;
+    margin:5px;
+}
+.myflex img{
+    width:100%;
+}

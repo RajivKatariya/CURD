@@ -6,6 +6,7 @@ import Educationlandingpage from './modules/education/Educationlandingpage';
 import Welcome from './Welcome';
 import Mylist from './modules/purchase/Mylist';
 import Apidata from './modules/purchase/Apidata';
+import { Myprodut } from './modules/sales/Mysales';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -18,6 +19,7 @@ root.render(
         <Route path='education' element={<Educationlandingpage />}/>
         <Route path='purchase' element={<Mylist />}/>
         <Route path='api' element={<Apidata />}/>
+        <Route path='sales' element={<Myprodut />}/>
       </Routes>
     
     

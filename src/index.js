@@ -7,6 +7,8 @@ import Welcome from './Welcome';
 import Mylist from './modules/purchase/Mylist';
 import Apidata from './modules/purchase/Apidata';
 import { Myprodut } from './modules/sales/Mysales';
+import Errorpage from './Errorpage'; 
+import Regform from './modules/education/Regform';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -20,6 +22,8 @@ root.render(
         <Route path='purchase' element={<Mylist />}/>
         <Route path='api' element={<Apidata />}/>
         <Route path='sales' element={<Myprodut />}/>
+        <Route path='*' element={<Errorpage />} />
+        <Route path='education/forms' element={<Regform />} />
       </Routes>
     
     

@@ -1,6 +1,8 @@
 import React from 'react'
 import { useState } from 'react'
 import { Fragment } from 'react'
+import { useForm } from 'react-hook-form';
+
 
 function Regform() {
 const [sv,sf] =useState('');
@@ -13,18 +15,37 @@ const [sv,sf] =useState('');
     }
     console.log(sv);
   }
+
+
+
+
+  const { register, handleSubmit} = useForm();
+  const onSubmit = (data) =>
+  { 
+    console.log(data);
+    if(data.pass===data.conpass)
+    {
+      alert("welcome");
+    }
+    else{
+      alert("wrong password");
+    }
+  }
+
     return (
         <Fragment>
-            <form>
+            
+            <form onSubmit={handleSubmit(onSubmit)}>
                 <ol>
-                    <li><input type="text" value={sv} placeholder='entre name' onChange={name} /></li>
-                    <li><input type="number"/></li>
-                    <li><input type="date"/></li>
-                    <li><input type="password" placeholder='password'/></li>
-                    <li><input type="password" placeholder='confirm password'/></li>
-                    <li><input type="button" value="submit"/></li>
+                    <li><input type="text" {...register("name")}/></li>
+                    <li><input type="number" {...register("age")}/></li>
+                    <li><input type="date" {...register("dob")}/></li>
+                    <li><input type="password" placeholder='password' {...register("pass")}/></li>
+                    <li><input type="password" placeholder='confirm password' {...register("conpass")}/></li>
+                    <li><input type="submit" value="submit"/></li>
                 </ol>
             </form>
+
 
 
 

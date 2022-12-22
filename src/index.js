@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter as Ducat , Route, Router, Routes } from 'react-router-dom';
+import { BrowserRouter as Ducat , Route,Routes,useParams  } from 'react-router-dom';
 import Travallandingpage from './modules/traval/travallandingpage';
 import Educationlandingpage from './modules/education/Educationlandingpage';
 import Welcome from './Welcome';
@@ -18,6 +18,7 @@ const Mymain = React.lazy(() => import('./modules/classess/Main'));
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+  
   <React.StrictMode>
     <Ducat>
       <Routes>
@@ -27,6 +28,7 @@ root.render(
         <Route path='purchase' element={<Mylist />}/>
         <Route path='api' element={<Apidata />}/>
         <Route path='sales' element={<Myprodut />}/>
+        <Route path="/sales/:id" element={<Myprodut />}/>
         <Route path='*' element={<Errorpage />} />
         <Route path='education/forms' element={<Regform />} />
         {/* <Route path='class' element={<Main />}/> */}

@@ -10,18 +10,13 @@ import { Myprodut } from './modules/sales/Mysales';
 import Errorpage from './Errorpage'; 
 import Regform from './modules/education/Regform';
 
-import { lazy, Suspense } from 'react';
-
-const Mymain = React.lazy(() => import('./modules/classess/Main'));
-
-
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   
   <React.StrictMode>
     <Ducat>
       <Routes>
+        
         <Route path='' element={<Welcome/>}/>
         <Route path='traval' element={<Travallandingpage/>}/>
         <Route path='education' element={<Educationlandingpage />}/>

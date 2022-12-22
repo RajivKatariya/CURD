@@ -47,12 +47,14 @@ function Welcome() {
                     </Link>
                 </div>
                 <div className='col-4 mt-4'>
+                    <Link to="class">
                     <div className="card">
                         <img src="image/img2.jpg" className="card-img-top" alt="eduction" />
                         <div className="card-body">
-                            <p className="card-text">about you education tab</p>
+                            <p className="card-text">About Classess</p>
                         </div>
                     </div>
+                    </Link>
                 </div>
                 <div className='col-4 mt-4'>
                     <div className="card">

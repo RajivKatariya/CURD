@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter as Ducat , Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Ducat , Route, Router, Routes } from 'react-router-dom';
 import Travallandingpage from './modules/traval/travallandingpage';
 import Educationlandingpage from './modules/education/Educationlandingpage';
 import Welcome from './Welcome';
@@ -24,8 +24,15 @@ root.render(
         <Route path='sales' element={<Myprodut />}/>
         <Route path='*' element={<Errorpage />} />
         <Route path='education/forms' element={<Regform />} />
+        {/* <Route path='class' element={<Main />}/> */}
+        <Route path='class' element={
+          <Suspense fallback={<div style={{backgroundColor:'red'}}>Loading...</div>}>
+          <Mymain/>
+        </Suspense>
+
+        }/>
       </Routes>
-    
+
     
     </Ducat>
 

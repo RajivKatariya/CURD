@@ -30,9 +30,10 @@ root.render(
         <Route path="/sales/:id" element={<Details />}/>
         <Route path='*' element={<Errorpage />} />
         <Route path='education/forms' element={<Regform />} />
+
         {/* <Route path='class' element={<Main />}/> */}
         <Route path='class' element={
-          <Suspense fallback={<div style={{backgroundColor:'red'}}>Loading...</div>}>
+          <Suspense fallback={<div style={{backgroundColor:'red'}}>Loading.....</div>}>
           <Mymain/>
         </Suspense>
 

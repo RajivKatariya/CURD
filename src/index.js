@@ -10,6 +10,7 @@ import { Myprodut } from './modules/sales/Mysales';
 import Errorpage from './Errorpage'; 
 import Regform from './modules/education/Regform';
 import Details from './modules/sales/Details';
+import Mylocal from './modules/mystore/Mylocal';
 const Mymain =lazy(()=>import('./modules/classess/Main'));
 
 
@@ -35,8 +36,8 @@ root.render(
           <Suspense fallback={<div style={{backgroundColor:'red'}}>Loading...</div>}>
           <Mymain/>
         </Suspense>
-
         }/>
+        <Route path='local' element={<Mylocal/>} />
       </Routes>
 
     

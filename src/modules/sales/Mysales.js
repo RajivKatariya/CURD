@@ -65,7 +65,7 @@ let { id } = useParams();
                 <Link to={`/sales/${e.id}`}>
                 <section>
                     <a href='http://google.com' target="_blank"><img src={e.image} /></a>
-                    <p>price: {e.price}</p>
+                    <p>price  : {e.price}</p>
                     <button className='btn btn-primary btn-sm'>Price: {e.price}</button>
                 </section>
                 </Link>

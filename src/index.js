@@ -11,6 +11,9 @@ import Errorpage from './Errorpage';
 import Regform from './modules/education/Regform';
 import Details from './modules/sales/Details';
 import Mylocal from './modules/mystore/Mylocal';
+import { Provider } from 'react-redux';
+import { Mystorage } from './store/Mystore';
+import Order1 from './store/Order';
 const Mymain =lazy(()=>import('./modules/classess/Main'));
 
 
@@ -19,9 +22,10 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   
   <React.StrictMode>
+
+<Provider store={Mystorage}>
     <Ducat>
       <Routes>
-        
         <Route path='' element={<Welcome/>}/>
         <Route path='traval' element={<Travallandingpage/>}/>
         <Route path='education' element={<Educationlandingpage />}/>
@@ -39,10 +43,10 @@ root.render(
         </Suspense>
         }/>
         <Route path='local' element={<Mylocal/>} />
+        <Route path='redux' element={<Order1/>} />
       </Routes>
-
-    
     </Ducat>
+    </Provider>
 
   </React.StrictMode>
 );

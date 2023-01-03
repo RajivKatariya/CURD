@@ -14,6 +14,8 @@ import Mylocal from './modules/mystore/Mylocal';
 import { Provider } from 'react-redux';
 import { Mystorage } from './store/Mystore';
 import Order1 from './store/Order';
+import Gallery from './modules/education/Gallery';
+import Matrialuihome from './matrialUI/Matrialuihome';
 const Mymain =lazy(()=>import('./modules/classess/Main'));
 
 
@@ -44,6 +46,8 @@ root.render(
         }/>
         <Route path='local' element={<Mylocal/>} />
         <Route path='redux' element={<Order1/>} />
+        <Route path='gallery' element={<Gallery/>} />
+        <Route path='matrialdesign' element={<Matrialuihome/>} />
       </Routes>
     </Ducat>
     </Provider>

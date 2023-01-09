@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter as Ducat , Route,Routes } from 'react-router-dom';
 import Travallandingpage from './modules/traval/travallandingpage';
 import Educationlandingpage from './modules/education/Educationlandingpage';
-import Welcome from './Welcome';
+// import Welcome from './Welcome';
 import Mylist from './modules/purchase/Mylist';
 import Apidata from './modules/purchase/Apidata';
 import { Myprodut } from './modules/sales/Mysales';
@@ -16,7 +16,11 @@ import { Mystorage } from './store/Mystore';
 import Order1 from './store/Order';
 import Gallery from './modules/education/Gallery';
 import Matrialuihome from './matrialUI/Matrialuihome';
+import { Auth0Provider } from '@auth0/auth0-react';
+import Myloginpage from './Myloginpage';
 const Mymain =lazy(()=>import('./modules/classess/Main'));
+// const domain = process.env.REACT-AUTH0-DOMAIN-ID;
+// const clit = process.env.REACT-AUTH0-CLIENT-ID;
 
 
 
@@ -26,9 +30,15 @@ root.render(
   <React.StrictMode>
 
 <Provider store={Mystorage}>
+  <Auth0Provider
+   domain="dev-2lztdozl12hbrfpe.us.auth0.com"
+   client="hvuSOD9PvV8xRyD8giVc41DHrUQWMOs2"
+   redirectUri={window.location.origin}
+   >
     <Ducat>
       <Routes>
-        <Route path='' element={<Welcome/>}/>
+        {/* <Route path='' element={<Welcome/>}/> */}
+        <Route path='' element={<Myloginpage/>}/>
         <Route path='traval' element={<Travallandingpage/>}/>
         <Route path='education' element={<Educationlandingpage />}/>
         <Route path='purchase' element={<Mylist />}/>
@@ -50,6 +60,7 @@ root.render(
         <Route path='matrialdesign' element={<Matrialuihome/>} />
       </Routes>
     </Ducat>
+    </Auth0Provider>
     </Provider>
 
   </React.StrictMode>

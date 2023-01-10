@@ -66,6 +66,16 @@ function Welcome() {
                     </div>
                     </Link>
                 </div>
+                <div className='col-4 mt-4'>
+                    <Link to="dashboard">
+                    <div className="card">
+                        <img src="image/img2.jpg" className="card-img-top" alt="eduction" />
+                        <div className="card-body">
+                            <p className="card-text">new Blog modules</p>
+                        </div>
+                    </div>
+                    </Link>
+                </div>
             </div>
         </div>
     )

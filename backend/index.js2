@@ -1,0 +1,30 @@
+const express =require('express');
+const app = express();
+const cors = require('cors');
+const mongoose = require('mongoose');
+
+require("dotenv").config();
+const PORT = parseInt(process.env.PORT) || 1000;
+
+var corsOptions = {
+    origin: "http://localhost:27017"
+  };
+
+  app.use(cors(corsOptions));
+  app.use(express.json());
+  app.use(express.urlencoded({ extended: true }));
+
+  const dbConfig = require("mongodb://127.0.0.1:27017/nitish");
+  mongoose.Promise = global.Promise;
+
+
+
+  app.get("/", (req, res) => {
+    res.json({ message: "Welcome to bezkoder application." });
+  });
+
+
+
+app.listen(PORT,()=>{
+    console.log(`server is runing at ${PORT}`);
+});

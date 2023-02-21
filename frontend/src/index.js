@@ -1,16 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import Login from './modules/auth/Login';
+import {BrowserRouter, Route, Routes} from 'react-router-dom';
+import Ladding from './modules/dashboard/Landing';
 
 
 import reportWebVitals from './reportWebVitals';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-        <Login></Login>
+    <BrowserRouter>
+    <Routes>
+      <Route path='' element={<Login/>} />
+      <Route path='dashboard' element={<Ladding />}/>
+    </Routes>
+       
 
 
-
+        </BrowserRouter>
   </React.StrictMode>
 );
 

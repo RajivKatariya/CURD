@@ -6,12 +6,14 @@ import Ladding from './modules/dashboard/Landing';
 
 
 import reportWebVitals from './reportWebVitals';
+import Registor from './modules/auth/Registor';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
     <Routes>
       <Route path='' element={<Login/>} />
+      <Route path='registor' element={<Registor/>} />
       <Route path='dashboard' element={<Ladding />}/>
     </Routes>
        

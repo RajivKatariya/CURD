@@ -22,8 +22,9 @@ function Login() {
               <input type="checkbox" class="form-check-input" />
               <label class="form-check-label" >Check me out</label>
             </div>
-            <Link to={'dashboard'}>submit</Link>
-            <button type="button" class="btn btn-primary" >Submit</button>
+            <Link to={'dashboard'} className="btn btn-success">submit</Link>
+           
+            <Link to="registor" className='btn btn-primary ms-3'>registor now</Link>
           </form>
         </section>
     </div>

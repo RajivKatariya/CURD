@@ -7,8 +7,10 @@ const userSchema = new mongoose.Schema({
     },
     phone:{
         type:Number
-        
     },
+    email:{
+        type:String
+    }
 });
 
 const users = new mongoose.model("users",userSchema);

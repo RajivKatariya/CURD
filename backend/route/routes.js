@@ -6,10 +6,10 @@ const router = express.Router();
 
 router.post("/reg", async(req,res)=>{
 
-    const {name,phone} = req.body;
+    const {name,phone,email} = req.body;
 
     const adduser = new users({
-        name,phone
+        name,phone,email
     });
     await adduser.save();
     res.status(201).json(adduser);

@@ -14,7 +14,7 @@ root.render(
     <Routes>
       <Route path='' element={<Login/>} />
       <Route path='reg' element={<Registor/>} />
-      <Route path='dashboard' element={<Ladding />}/>
+      <Route path='getdata' element={<Ladding />}/>
     </Routes>
        
 

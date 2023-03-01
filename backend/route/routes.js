@@ -14,8 +14,14 @@ router.post("/reg", async(req,res)=>{
     await adduser.save();
     res.status(201).json(adduser);
     console.log(adduser);
-
 });
+
+
+router.get("/getdata",async(req,res)=>{
+    const adduser = await users.find();
+    res.status(555).json(adduser);
+    console.log(adduser);
+})
 
 
 

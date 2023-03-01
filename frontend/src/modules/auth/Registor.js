@@ -37,7 +37,7 @@ const addnewdata = async(e)=>{
 
   const data = await res.json();
   console.log(data);
-  window.location.reload();
+  // window.location.reload();
 
 }
 
@@ -75,8 +75,9 @@ const addnewdata = async(e)=>{
               <input type="checkbox" class="form-check-input" />
               <label class="form-check-label" >condition</label>
             </div>
-        <button type='submit' onClick={addnewdata}>submit</button>
-            <Link to="/" class="btn btn-primary" >Registor Now</Link>
+        <button type='submit' className="btn btn-primary" onClick={addnewdata}>submit</button>
+            {/* <Link to="/" class="btn btn-primary" >Registor Now</Link> */}
+            <Link to="/">Back to Login page</Link>
           </form>
         </section>
     </div>

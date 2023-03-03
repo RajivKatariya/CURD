@@ -16,9 +16,9 @@ function Sidebar() {
     </h2>
     <div id="panelsStayOpen-collapseOne" className="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
       <div className="accordion-body">
-     <ul classNameName='list-group list-group-flush'>
-      <li classNameName='list-group-item'><Link to="">Home</Link></li>
-      <li classNameName='list-group-item'><Link to="">Home</Link></li>
+     <ul className='list-group list-group-flush'>
+      <li className='list-group-item'><Link to="">Home</Link></li>
+      <li className='list-group-item'><Link to="">Home</Link></li>
      </ul>
       </div>
     </div>
@@ -38,14 +38,14 @@ function Sidebar() {
       </div>
     </div>
   </div>
-  <div class="accordion-item">
-    <h2 class="accordion-header" id="panelsStayOpen-headingThree">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+  <div className="accordion-item">
+    <h2 className="accordion-header" id="panelsStayOpen-headingThree">
+      <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
         Contact us
       </button>
     </h2>
-    <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
-      <div class="accordion-body">
+    <div id="panelsStayOpen-collapseThree" className="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
+      <div className="accordion-body">
       <ul className='list-group list-group-flush'>
       <li className='list-group-item'><Link to="">Home</Link></li>
       <li className='list-group-item'><Link to="">Home</Link></li>

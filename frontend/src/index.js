@@ -7,6 +7,8 @@ import Ladding from './modules/dashboard/Landing';
 
 import reportWebVitals from './reportWebVitals';
 import Registor from './modules/auth/Registor';
+import Singlepage from './modules/dashboard/Singlepage';
+import Editpage from './modules/dashboard/Editpage';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
@@ -14,7 +16,9 @@ root.render(
     <Routes>
       <Route path='' element={<Login/>} />
       <Route path='reg' element={<Registor/>} />
-      <Route path='getdata' element={<Ladding />}/>
+      <Route path='landing' element={<Ladding />}/>
+      <Route path='view/:id' element={<Singlepage />}/>
+      <Route path='edit/:id' element={<Editpage />}/>
     </Routes>
        
 

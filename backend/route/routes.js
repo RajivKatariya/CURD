@@ -3,11 +3,9 @@ const users = require("../models/myschma");
 const router = express.Router();
 
 
-
+/*create or post api */
 router.post("/reg", async(req,res)=>{
-
     const {name,phone,email} = req.body;
-
     const adduser = new users({
         name,phone,email
     });
@@ -17,7 +15,7 @@ router.post("/reg", async(req,res)=>{
 });
 
 
-
+/* get all data api 1 */
 router.get("/getdata",async(req,res)=>{
     const adduser = await users.find();
     res.json(adduser);
@@ -25,7 +23,7 @@ router.get("/getdata",async(req,res)=>{
 });
 
 
-
+/*get single data api */
 router.get("/view/:id",async(req,res)=>{
     console.log(req.params);
     const {id} = req.params;
@@ -36,9 +34,8 @@ router.get("/view/:id",async(req,res)=>{
 });
 
 
-
+/*update api */
 router.patch("/updaterecord/:id",async(req,res)=>{
-
     const {id} = req.params;
     const recordupdate = await users.findByIdAndUpdate(id,req.body,{new:true});
     console.log(recordupdate);
@@ -46,8 +43,8 @@ router.patch("/updaterecord/:id",async(req,res)=>{
 });
 
 
+/* for delete api*/
 router.delete("/deleterecord/:id",async(req,res)=>{
-
     const {id} = req.params;
     const a = await users.findByIdAndDelete({_id:id})
     console.log(a);

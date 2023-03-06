@@ -10,6 +10,7 @@ import { NavLink, useParams } from 'react-router-dom';
 function Landing() {
 const [datavariable,datafunction] =useState([]);
 
+/*get all data function with api 2 */
   const mygetdata = async(e)=>{
     const res = await fetch("http://localhost:7000/getdata",{
       method:"GET",
@@ -56,16 +57,19 @@ const [datavariable,datafunction] =useState([]);
             <th>#id</th>
             <th>Name</th>
             <th>Phone</th>
+            <th>email</th>
             <th>action</th>
           </tr>
           </thead>
           <tbody>
             {datavariable.map((u)=>{
+              // bind in html template 3 
               return(
                   <tr key={u._id}>
                     <td>{u._id}</td>
                     <td>{u.name}</td>
                     <td>{u.phone}</td>
+                    <td>{u.email}</td>
                     <td>
                       <button className='btn btn-sm btn-danger' onClick={()=>deleterecordfunction(u._id)}>Del</button>
                       <NavLink to={`/edit/${u._id}`} className="btn btn-primary btn-sm">edit</NavLink>

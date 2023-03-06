@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 function Singlepage() {
 
     const {id} = useParams("");
-    // console.log(id);
+    console.log(id);
 
     const [singlev,singlef] =useState([]);
     
@@ -30,7 +30,8 @@ function Singlepage() {
 
   return (
     <div>
-        <h1>Details page</h1>
+        <h1>This is Single page details</h1>
+    
         
         <h2>{singlev._id}</h2>
        <h2>{singlev.name}</h2>

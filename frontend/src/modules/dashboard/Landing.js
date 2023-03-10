@@ -1,13 +1,21 @@
-import React, {useEffect, useState } from 'react';
+import React, {useContext, useEffect, useState } from 'react';
 
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap.bundle";
 import "../../assets/css/global.css";
 import Navbar from '../../share/Navbar';
 import Sidebar from '../../share/Sidebar';
-import { NavLink, useParams } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
+import { LoginContextData } from '../../contextapi/logincontextapi';
 
 function Landing() {
+
+
+//import context
+const {contexv,contextf} = useContext(LoginContextData);
+//  contextf(contexv);
+
+  
 const [datavariable,datafunction] =useState([]);
 
 /*get all data function with api 2 */
@@ -19,12 +27,41 @@ const [datavariable,datafunction] =useState([]);
     const data = await res.json();
     console.log(data);
     datafunction(data)
+  };
+
+  const his=useNavigate();
+  const Userauth1 = async(e)=>{
+    
+    let token = localStorage.getItem("userdatatoken");
+    const res = await fetch("http://localhost:7000/validuser",{
+      method:"GET",
+      headers:{
+        "Content-Type":"application/json",
+        "Authorization":token
+      }
+    });
+    const data = await res.json();
+    if(data.status === 401 || !data)
+    {
+      console.log("error page direction");
+      his("*");
+    }
+    else{
+      console.log("valid user"); 
+      his("/landing");
+      contextf(data.firsttimevalid.email);
+    }
+    
+   
   }
 
   useEffect(()=>{
+    Userauth1();
     mygetdata();
-
+    
   },[]);
+
+ 
 
 
 
@@ -37,7 +74,9 @@ const [datavariable,datafunction] =useState([]);
     console.log(deleterow);
     mygetdata();
    
-  }
+  };
+
+
 
 
 
@@ -50,7 +89,17 @@ const [datavariable,datafunction] =useState([]);
         <div className="col-10 border">
           <Navbar/>
       <div className='p-3'>
-        <h1>welcom to page</h1> <NavLink className="btn btn-primary btn-sm" to="/reg">add new User</NavLink>
+       
+        <section className='container-fluid'>
+        <div className='row'>
+          <div className='col-md-6'>
+          <h1>welcom to page</h1> <NavLink className="btn btn-primary btn-sm" to="/reg">add new User</NavLink>
+          </div>
+          <div className='col-md-6 text-end'>
+            <h3>{contexv}</h3>
+          </div>
+        </div>
+        </section>
         <table className='table borderd'>
           <thead>
           <tr>

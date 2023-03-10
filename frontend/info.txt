@@ -1,2 +1,6 @@
 ui)
     npm install react-bootstrap bootstrap
+
+    npm install bcrypt
+    npm install jsonwebtoken
+    npm install cookie-parser

@@ -1,33 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import Login from './modules/auth/Login';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Ladding from './modules/dashboard/Landing';
-
-
+import Landingpage from './modals/Landingpage';
 import reportWebVitals from './reportWebVitals';
-import Registor from './modules/auth/Registor';
-import Singlepage from './modules/dashboard/Singlepage';
-import Editpage from './modules/dashboard/Editpage';
-import Errorpage from './modules/auth/Errorpage';
-import LoginContext from './contextapi/logincontextapi';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-   
-      <BrowserRouter>
-      <LoginContext>
-        <Routes>
-          <Route path='' element={<Login />} />
-          <Route path='reg' element={<Registor />} />
-          <Route path='landing' element={<Ladding />} />
-          <Route path='view/:id' element={<Singlepage />} />
-          <Route path='edit/:id' element={<Editpage />} />
-          <Route path='*' element={<Errorpage />} />
-        </Routes>
-        </LoginContext>
-      </BrowserRouter>
-    
+    <Landingpage/>
   </React.StrictMode>
 );
 

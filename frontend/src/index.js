@@ -2,11 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import Landingpage from './modals/Landingpage';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter, Route,Routes } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Landingpage/>
+    <BrowserRouter>
+    <Routes>
+      <Route path='/' element={<Landingpage/>}/>
+    </Routes>
+    </BrowserRouter>
   </React.StrictMode>
 );
 

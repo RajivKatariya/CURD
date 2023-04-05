@@ -1,4 +1,6 @@
 import React from 'react'
+import { Loginmodal } from '../modules/Mymodal'
+import {Link} from 'react-router-dom';
 
 function Navbar() {
   return (
@@ -30,10 +32,16 @@ function Navbar() {
           <li className="nav-item">
             <a className="nav-link disabled">Disabled</a>
           </li>
+          <li className="nav-item">
+            <Link className="nav-link disabled" to="jkjjjj">Registor</Link>
+          </li>
         </ul>
         <form className="d-flex" role="search">
           <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
           <button className="btn btn-outline-success" type="submit">Search</button>
+          <button className="btn btn-success ms-2" type="button" data-bs-toggle="modal" data-bs-target="#loginpage">Login</button>
+          
+          <Loginmodal/>
         </form>
       </div>
     </div>

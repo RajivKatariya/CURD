@@ -3,39 +3,39 @@ import React from "react"
 
 export function Loginmodal() {
     return (
-        <div class="modal fade" id="loginpage" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div className="modal fade" id="loginpage" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div className="modal-dialog">
+                <div className="modal-content">
+                    <div className="modal-header">
+                        <h1 className="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <form>
-                    <div class="modal-body">
+                    
+                    <div className="modal-body">
                         {/* login page start */}
                         <div className="container-fluid">
                             <div className="row">
                                 <div className="col-12">
-                                    <label class="form-label">Email address</label>
-                                    <input type="email" class="form-control" />
-                                    <div class="form-text"> filed required</div>
+                                    <label className="form-label">Email address</label>
+                                    <input type="email" className="form-control" />
+                                    <div className="form-text"> filed required</div>
                                 </div>
                                 <div className="col-12">
-                                    <label class="form-label">Password</label>
-                                    <input type="password" class="form-control" />
-                                    <div class="form-text"> filed required</div>
+                                    <label className="form-label">Password</label>
+                                    <input type="password" className="form-control" />
+                                    <div className="form-text"> filed required</div>
                                    
                                 </div>
                             </div>
                         </div>
                         {/* end */}
                     </div>
-                    <div class="modal-footer">
+                    <div className="modal-footer">
                        
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">cancle</button>
-                        <button type="submit" class="btn btn-primary">Save changes</button>
+                        <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">cancle</button>
+                        <button type="submit" className="btn btn-primary">Save changes</button>
                     </div>
-                    </form>
+                    
                 </div>
             </div>
         </div>

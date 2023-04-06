@@ -4,6 +4,7 @@ import "bootstrap/dist/js/bootstrap.bundle.js";
 import "./style.css";
 import Navbar from './Navbar';
 import Sidebar from './Sidebar';
+import { mydata } from './Myfakedata';
 
 
 function Landingpage() {
@@ -17,58 +18,41 @@ function Landingpage() {
         </div>
         <div className='col-md-10 g-0 bg-light'>
           <section className='border p-2'>
-            <nav className='row'>
+            <nav className='row row1'>
               <div className='col-12'>
               <Navbar/>
               </div>
             </nav>
-            <div className='row mt-2'>
-              <div className='col-md-3'>
-              <div className="card">
-                <div className="card-body">
-                  <h5 className="card-title">Card title</h5>
-                  <h6 className="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                  <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" className="card-link">Card link</a>
-                  <a href="#" className="card-link">Another link</a>
-                </div>
-              </div>
-              </div>
-              <div className='col-md-3'>
-              <div className="card">
-                <div className="card-body">
-                  <h5 className="card-title">Card title</h5>
-                  <h6 className="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                  <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" className="card-link">Card link</a>
-                  <a href="#" className="card-link">Another link</a>
-                </div>
-              </div>
-              </div>
-              <div className='col-md-3'>
-              <div className="card">
-                <div className="card-body">
-                  <h5 className="card-title">Card title</h5>
-                  <h6 className="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                  <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" className="card-link">Card link</a>
-                  <a href="#" className="card-link">Another link</a>
-                </div>
-              </div>
-              </div>
-              <div className='col-md-3'>
-              <div className="card">
-                <div className="card-body">
-                  <h5 className="card-title">Card title</h5>
-                  <h6 className="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                  <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" className="card-link">Card link</a>
-                  <a href="#" className="card-link">Another link</a>
-                </div>
-              </div>
-              </div>
-            </div>
-
+           
+            <table className='table mt-5 table-responsive'>
+              <thead>
+                <tr>
+                <th>sno</th>
+                <th>Full Name</th>
+                <th>Email id</th>
+                <th>Phone No</th>
+                <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+              {mydata.map((a)=>{
+                return(
+                  <tr key={a.sno}>
+                  <td>{a.sno}</td>
+                  <td>{a.name}</td>
+                  <td>{a.email}</td>
+                  <td>{a.phone}</td>
+                  <td>
+                    <button type='button' className='btn btn-warning btn-sm me-2'>Edit</button>
+                    <button type='button' className='btn btn-danger btn-sm me-2'>Del</button>
+                    <button type='button' className='btn btn-info btn-sm'>view</button>
+                  </td>
+                </tr>
+                )
+              })}
+              </tbody>
+             
+            </table>
 
           </section>
         </div>

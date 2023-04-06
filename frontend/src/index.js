@@ -3,13 +3,17 @@ import ReactDOM from 'react-dom/client';
 import Landingpage from './modals/Landingpage';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Route,Routes } from 'react-router-dom';
+import Registgor from './modals/Registgor';
+import Loginpage from './modals/Loginpage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
     <Routes>
-      <Route path='/' element={<Landingpage/>}/>
+      <Route path='/' element={<Loginpage/>}/>
+      <Route path='/reg' element={<Registgor/>}/>
+      <Route path='/landing' element={<Landingpage/>}/>
     </Routes>
     </BrowserRouter>
   </React.StrictMode>

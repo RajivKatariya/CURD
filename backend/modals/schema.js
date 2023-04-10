@@ -1,17 +1,20 @@
 
 const mongoose = require("mongoose");
 const userSchema =new mongoose.Schema({
-    name:{
+    fullname:{
+        type:String
+    },
+    phone:{
         type:String
     },
     email:{
         type:String
     },
-    phone:{
-        type:Number
+    pass:{
+        type:String
     }
 });
 
-const userdata = new mongoose.model("users",userSchema);
+const userdata = new mongoose.model("studentlist",userSchema);
 module.exports = userdata;
 

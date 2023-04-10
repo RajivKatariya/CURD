@@ -1,34 +1,28 @@
+require("dotenv").config();
 const express = require("express");
-const mongoose = require('mongoose');
-require('dotenv').config();
-const port = process.env.port || 4000;
-require('./database/Connection');
-
-
-
-
 const app = express();
+const PORT = process.env.PORT || 5000
+const mongoose = require("mongoose");
+// mongoose.set('strictQuery', true);
+
+require("./database/Connection");
+const userdata = require("./modals/Schema");
+const cors = require("cors");
+const cookiParser = require("cookie-parser");
+const router = require("./routes/route");
+
+
+
+app.use(cors());
+app.use(cookiParser());
 app.use(express.json());
-
-app.get("/",(req,res)=>{
-    res.send("this is text10");
-})
-
-app.get("/about",(req,res)=>{
-    res.send("this is about page");
-})
-
-app.post("/reg", async(req,res)=>{
-    console.log(req.body.name);
-    
-});
-    
-    
+app.use(router);
 
 
 
 
 
-app.listen(port,()=>{
-    console.log(`port is runing at${port}`);
+
+app.listen(PORT,()=>{
+    console.log(`server is start at ${PORT}`);
 })

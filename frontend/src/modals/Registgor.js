@@ -25,9 +25,22 @@ const getdata = (e)=>{
 }
 
 
-const mynewrecord = ()=>
+const mynewrecord = async(e)=>
 {
-  console.log(sv);
+  e.preventDefault();
+  const {fullname,email,phone,pass} = sv;
+  
+  const res = await fetch("http://localhost:8000/regs",{
+    method:"POST",
+    headers:{"Content-Type":"application/json"},
+    body:JSON.stringify({
+      fullname,email,phone,pass
+    })
+  })
+
+  const data = await res.json();
+  console.log(data);
+  
 }
 
 

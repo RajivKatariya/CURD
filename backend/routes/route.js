@@ -15,4 +15,12 @@ router.post("/regs", async(req,res)=>{
 });
 
 
+/* get api*/
+router.get("/getdata",async(req,res)=>{
+    const adduser = await userdata.find();
+    res.json(adduser);
+    console.log(adduser);
+});
+
+
 module.exports = router;

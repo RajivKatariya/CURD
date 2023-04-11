@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect,useState } from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.js";
 import "./style.css";
@@ -8,6 +8,24 @@ import { mydata } from './Myfakedata';
 
 
 function Landingpage() {
+
+  
+  const [datavariable,datafunction] =useState([]);
+    const mygetdata = async(e)=>{
+      const res = await fetch("http://localhost:8000/getdata",{
+        method:"GET",
+        headers:{"Content-Type":"application/json"}
+      })
+      const data = await res.json();
+      console.log(data);
+      datafunction(data)
+    };
+
+    useEffect(()=>{
+      mygetdata();
+    },[]);
+
+
   return (
     <div className='container-fluid'>
       <div className='row'>
@@ -35,11 +53,11 @@ function Landingpage() {
                 </tr>
               </thead>
               <tbody>
-              {mydata.map((a)=>{
+              {datavariable.map((a)=>{
                 return(
-                  <tr key={a.sno}>
-                  <td>{a.sno}</td>
-                  <td>{a.name}</td>
+                  <tr key={a._id}>
+                  <td>{a._id}</td>
+                  <td>{a.fullname}</td>
                   <td>{a.email}</td>
                   <td>{a.phone}</td>
                   <td>

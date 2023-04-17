@@ -4,7 +4,8 @@ import "bootstrap/dist/js/bootstrap.bundle.js";
 import "./style.css";
 import Navbar from './Navbar';
 import Sidebar from './Sidebar';
-import { mydata } from './Myfakedata';
+
+
 
 
 function Landingpage() {
@@ -24,6 +25,23 @@ function Landingpage() {
     useEffect(()=>{
       mygetdata();
     },[]);
+
+
+
+
+    const mydeleterecord = async(id)=>{
+      const delrec = await fetch(`http://localhost:8000/deletecurrentrecord/${id}`,{
+        method:"DELETE",
+        headers:{"Content-Type":"application/json"}
+      })
+      const deleterow = await delrec.json();
+      console.log(deleterow);
+      alert("delete records successfully");
+      mygetdata();
+     
+    };
+  
+
 
 
   return (
@@ -62,7 +80,7 @@ function Landingpage() {
                   <td>{a.phone}</td>
                   <td>
                     <button type='button' className='btn btn-warning btn-sm me-2'>Edit</button>
-                    <button type='button' className='btn btn-danger btn-sm me-2'>Del</button>
+                    <button type='button' className='btn btn-danger btn-sm me-2' onClick={()=>mydeleterecord(a._id)}>Del</button>
                     <button type='button' className='btn btn-info btn-sm'>view</button>
                   </td>
                 </tr>

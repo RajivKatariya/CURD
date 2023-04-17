@@ -16,10 +16,19 @@ router.post("/regs", async(req,res)=>{
 
 
 /* get api*/
-router.get("/getdata",async(req,res)=>{
+router.get("/getdata", async(req,res)=>{
     const adduser = await userdata.find();
     res.json(adduser);
     console.log(adduser);
+});
+
+
+/* delete api*/
+router.delete("/deletecurrentrecord/:id", async(req,res)=>{
+    const {id} = req.params;
+    const a = await userdata.findByIdAndDelete({_id:id})
+    console.log(a);
+    res.status(201).json(a);
 });
 
 

@@ -5,6 +5,7 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Route,Routes } from 'react-router-dom';
 import Registgor from './modals/Registgor';
 import Loginpage from './modals/Loginpage';
+import Editrecord from './modals/Editrecord';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -14,6 +15,7 @@ root.render(
       <Route path='/' element={<Loginpage/>}/>
       <Route path='/reg' element={<Registgor/>}/>
       <Route path='/landing' element={<Landingpage/>}/>
+      <Route path='/editrecord/:id' element={<Editrecord/>}/>
     </Routes>
     </BrowserRouter>
   </React.StrictMode>

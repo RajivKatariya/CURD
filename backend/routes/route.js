@@ -32,4 +32,26 @@ router.delete("/deletecurrentrecord/:id", async(req,res)=>{
 });
 
 
+
+/*get single data api */
+router.get("/view/:id",async(req,res)=>{
+    console.log(req.params);
+    const {id} = req.params;
+    const singleuser = await userdata.findById({_id:id});
+    console.log(singleuser);
+    res.status(201).json(singleuser);
+
+});
+
+
+
+/*update api */
+router.patch("/updaterecord/:id",async(req,res)=>{
+    const {id} = req.params;
+    const recordupdate = await userdata.findByIdAndUpdate(id,req.body,{new:true});
+    console.log(recordupdate);
+    res.status(201).json(recordupdate);
+});
+
+
 module.exports = router;

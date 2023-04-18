@@ -4,6 +4,7 @@ import "bootstrap/dist/js/bootstrap.bundle.js";
 import "./style.css";
 import Navbar from './Navbar';
 import Sidebar from './Sidebar';
+import { Link } from 'react-router-dom';
 
 
 
@@ -79,7 +80,7 @@ function Landingpage() {
                   <td>{a.email}</td>
                   <td>{a.phone}</td>
                   <td>
-                    <button type='button' className='btn btn-warning btn-sm me-2'>Edit</button>
+                    <Link type='button' className='btn btn-warning btn-sm me-2' to={`/editrecord/${a._id}`}>Edit</Link>
                     <button type='button' className='btn btn-danger btn-sm me-2' onClick={()=>mydeleterecord(a._id)}>Del</button>
                     <button type='button' className='btn btn-info btn-sm'>view</button>
                   </td>

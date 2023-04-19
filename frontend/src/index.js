@@ -6,6 +6,7 @@ import { BrowserRouter, Route,Routes } from 'react-router-dom';
 import Registgor from './modals/Registgor';
 import Loginpage from './modals/Loginpage';
 import Editrecord from './modals/Editrecord';
+import MyDetailspage from './modals/MyDetailspage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -16,6 +17,7 @@ root.render(
       <Route path='/reg' element={<Registgor/>}/>
       <Route path='/landing' element={<Landingpage/>}/>
       <Route path='/editrecord/:id' element={<Editrecord/>}/>
+      <Route path='/view/:id' element={<MyDetailspage/>}/>
     </Routes>
     </BrowserRouter>
   </React.StrictMode>

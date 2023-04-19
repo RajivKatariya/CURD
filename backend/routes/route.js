@@ -2,6 +2,7 @@
 const express = require("express");
 const userdata = require("../modals/Schema");
 const router = express.Router();
+const authenticat = require('../midilware/webtoken');
 
 /*create or post api */
 router.post("/regs", async(req,res)=>{
@@ -52,6 +53,43 @@ router.patch("/updaterecord/:id",async(req,res)=>{
     console.log(recordupdate);
     res.status(201).json(recordupdate);
 });
+
+
+
+/*get single data api */
+router.get("/userdetail/:id",async(req,res)=>{
+    const {id} = req.params;
+    const singleuser = await userdata.findById({_id:id});
+    console.log(singleuser);
+    res.status(201).json(singleuser);
+});
+
+
+router.post("/login", async(req,res)=>{
+    console.log(req.body);
+    const {email,pass} = req.body;
+    const uservalidation = await userdata.findOne({email:email});
+});
+
+
+
+
+
+// user validation
+router.get("/validuser",authenticat,async(req,res)=>{
+    try{
+        const firsttimevalid = await userdata.findOne({_id:req.userId});
+        res.status(201).json({status:201,firsttimevalid});
+    }
+    catch(error)
+    {
+        res.status(401).json({status:401,error})
+    }
+});
+
+
+
+
 
 
 module.exports = router;

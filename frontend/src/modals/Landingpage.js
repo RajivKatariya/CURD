@@ -80,9 +80,9 @@ function Landingpage() {
                   <td>{a.email}</td>
                   <td>{a.phone}</td>
                   <td>
-                    <Link type='button' className='btn btn-warning btn-sm me-2' to={`/editrecord/${a._id}`}>Edit</Link>
+                    <Link className='btn btn-warning btn-sm me-2' to={`/editrecord/${a._id}`}>Edit</Link>
                     <button type='button' className='btn btn-danger btn-sm me-2' onClick={()=>mydeleterecord(a._id)}>Del</button>
-                    <button type='button' className='btn btn-info btn-sm'>view</button>
+                    <Link className='btn btn-info btn-sm' to={`/view/${a._id}`}>view Profile</Link>
                   </td>
                 </tr>
                 )

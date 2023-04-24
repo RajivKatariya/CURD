@@ -1,5 +1,5 @@
 import React ,{useState} from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function Loginpage() {
 
@@ -21,6 +21,7 @@ function Loginpage() {
   }
 
 
+  const his = useNavigate();
   const loginuser = async(e)=>{
     e.preventDefault();
     const {email,pass} = sv;
@@ -32,6 +33,17 @@ function Loginpage() {
         email,pass
       })
     })
+  
+    const res = await mydata.json();
+    console.log(res);
+    if(res.status === 201)
+    {
+      localStorage.setItem("userdatatoken",res.result.token);
+        his("/landing");
+      sf({...sv,email:"",pass:""});
+      
+    }
+  
   }
 
 

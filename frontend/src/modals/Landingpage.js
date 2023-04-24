@@ -4,7 +4,7 @@ import "bootstrap/dist/js/bootstrap.bundle.js";
 import "./style.css";
 import Navbar from './Navbar';
 import Sidebar from './Sidebar';
-import { Link } from 'react-router-dom';
+import { Link,useNavigate } from 'react-router-dom';
 
 
 
@@ -23,8 +23,36 @@ function Landingpage() {
       datafunction(data)
     };
 
+
+    const his=useNavigate();
+  const Userauth1 = async(e)=>{
+    
+    let token = localStorage.getItem("userdatatoken");
+    const res = await fetch("http://localhost:8000/validuser",{
+      method:"GET",
+      headers:{
+        "Content-Type":"application/json",
+        "Authorization":token
+      }
+    });
+    const data = await res.json();
+    if(data.status === 401 || !data)
+    {
+      console.log("error page direction");
+      his("");
+    }
+    else{
+      console.log("valid user"); 
+      his("/landing");
+     
+    }
+    
+   
+  }
+
     useEffect(()=>{
       mygetdata();
+      Userauth1();
     },[]);
 
 

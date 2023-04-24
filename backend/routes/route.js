@@ -2,6 +2,7 @@
 const express = require("express");
 const userdata = require("../modals/Schema");
 const router = express.Router();
+const bcrypt = require("bcryptjs");
 const authenticat = require('../midilware/webtoken');
 
 /*create or post api */
@@ -68,10 +69,38 @@ router.get("/userdetail/:id",async(req,res)=>{
 router.post("/login", async(req,res)=>{
     console.log(req.body);
     const {email,pass} = req.body;
-    const uservalidation = await userdata.findOne({email:email});
+      
+    if(!email || !pass){
+        return res.status(422).json({error:"user and password dont match"});
+       
+    }
+    try{
+        const uservalidation = await userdata.findOne({email:email});
+        console.log(uservalidation.pass);
+        if(uservalidation){
+            const mathdata = await bcrypt.compare(pass,uservalidation.pass);
+            console.log(mathdata);
+            if(!mathdata){
+                res.status(422).json({error:"password not match"});
+            }else{
+                //token generate after successful find data
+                    const token = await uservalidation.customgeenratefunction();
+                // cookies generate
+                    res.cookie("usecookie",token,{
+                        expires:new Date(Date.now()+9000000),
+                        httpOnly:true
+                    });
+                    const result = {
+                        uservalidation,
+                        token
+                    }
+                    return res.status(201).json({status:201,result});  
+            }
+        }
+    } catch(error)
+    {}
+    
 });
-
-
 
 
 
@@ -86,10 +115,6 @@ router.get("/validuser",authenticat,async(req,res)=>{
         res.status(401).json({status:401,error})
     }
 });
-
-
-
-
 
 
 module.exports = router;

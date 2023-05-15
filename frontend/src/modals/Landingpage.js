@@ -38,12 +38,13 @@ function Landingpage() {
     const data = await res.json();
     if(data.status === 401 || !data)
     {
-      console.log("error page direction");
-      his("");
-    }
-    else{
       console.log("valid user"); 
       his("/landing");
+    }
+    else{
+      
+      console.log("error page direction");
+      his("*");
      
     }
     
@@ -51,8 +52,9 @@ function Landingpage() {
   }
 
     useEffect(()=>{
-      mygetdata();
       Userauth1();
+      mygetdata();
+      
     },[]);
 
 

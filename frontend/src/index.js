@@ -7,6 +7,7 @@ import Registgor from './modals/Registgor';
 import Loginpage from './modals/Loginpage';
 import Editrecord from './modals/Editrecord';
 import MyDetailspage from './modals/MyDetailspage';
+import Myerrorpage from './modals/Myerrorpage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -18,6 +19,7 @@ root.render(
       <Route path='/landing' element={<Landingpage/>}/>
       <Route path='/editrecord/:id' element={<Editrecord/>}/>
       <Route path='/view/:id' element={<MyDetailspage/>}/>
+      <Route path='*' element={<Myerrorpage/>}/>
     </Routes>
     </BrowserRouter>
   </React.StrictMode>
